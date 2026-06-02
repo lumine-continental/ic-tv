@@ -1,9 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import { GlassButton } from '../components/GlassButton';
 import { VideoModal } from '../components/VideoModal';
 import { useGamificationStore } from '../store/useGamificationStore';
-import { Building2, Laptop, Factory, HardHat, Briefcase, HeartPulse, BookOpen, X } from 'lucide-react';
+import { Building2, Laptop, HardHat, Briefcase, HeartPulse, X, Palette, Scissors, Stethoscope, Calculator, ChefHat } from 'lucide-react';
+
+const AREAS = [
+  { name: 'Tecnología', slug: 'tecnologia', icon: Laptop },
+  { name: 'Negocios', slug: 'negocios', icon: Briefcase },
+  { name: 'Salud', slug: 'salud', icon: HeartPulse },
+  { name: 'Culinaria', slug: 'culinaria', icon: ChefHat }
+];
+
+const ALL_CARRERAS = [
+  { id: 1, area: 'negocios', nombre: 'Administración de Empresas', desc: 'Lidera organizaciones y gestiona recursos para el éxito empresarial global.', icon: Building2 },
+  { id: 2, area: 'negocios', nombre: 'Contabilidad', desc: 'Domina las finanzas y toma decisiones estratégicas basadas en datos.', icon: Calculator },
+  { id: 3, area: 'tecnologia', nombre: 'Desarrollo de Sistemas', desc: 'Crea software, aplicaciones y soluciones tecnológicas del futuro.', icon: Laptop },
+  { id: 4, area: 'tecnologia', nombre: 'Diseño de Modas', desc: 'Desarrolla colecciones de moda con visión global y altamente creativa.', icon: Scissors },
+  { id: 5, area: 'tecnologia', nombre: 'Diseño Gráfico Publicitario', desc: 'Comunica visualmente mensajes estratégicos e impactantes.', icon: Palette },
+  { id: 6, area: 'tecnologia', nombre: 'Gestión de la Construcción', desc: 'Administra y dirige proyectos de infraestructura moderna de alto nivel.', icon: HardHat },
+  { id: 7, area: 'salud', nombre: 'Enfermería', desc: 'Brinda cuidado integral y humanizado para promover la salud.', icon: Stethoscope },
+  { id: 8, area: 'salud', nombre: 'Farmacia', desc: 'Asegura el uso racional de medicamentos y mejora la salud pública.', icon: HeartPulse },
+  { id: 9, area: 'culinaria', nombre: 'Gastronomía', desc: 'Domina las técnicas culinarias y lidera negocios de restaurantes.', icon: ChefHat },
+];
 
 const CarrerasMenu: React.FC = () => {
   const navigate = useNavigate();
@@ -13,7 +32,7 @@ const CarrerasMenu: React.FC = () => {
         Modalidad de Estudio
       </h1>
       <div className="flex gap-12 max-w-md w-full">
-        <div 
+        <div
           onClick={() => navigate('presencial')}
           className="flex-1 glass-panel p-10 cursor-pointer flex flex-col items-center gap-6 active:scale-95 group transition-transform"
         >
@@ -29,17 +48,11 @@ const CarrerasMenu: React.FC = () => {
 
 const AreasMenu: React.FC = () => {
   const navigate = useNavigate();
-  const areas = [
-    { name: 'Ingeniería', icon: Factory }, 
-    { name: 'Negocios', icon: Briefcase }, 
-    { name: 'Salud', icon: HeartPulse }, 
-    { name: 'Humanidades', icon: BookOpen }
-  ];
-  
+
   return (
     <div className="w-full h-full flex flex-col items-center justify-center p-8 z-10 relative">
       <div className="fixed top-10 right-10 z-[100]">
-        <button 
+        <button
           onClick={() => navigate('..')}
           className="px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center gap-3 transition-colors border border-white/20 text-white font-medium active:scale-95 shadow-lg"
         >
@@ -49,12 +62,12 @@ const AreasMenu: React.FC = () => {
       </div>
       <h1 className="text-4xl font-bold tracking-tight text-white mb-8 drop-shadow-lg">Áreas Académicas</h1>
       <div className="grid grid-cols-2 gap-6 w-full max-w-4xl">
-        {areas.map(area => {
+        {AREAS.map(area => {
           const Icon = area.icon;
           return (
-            <div 
-              key={area.name} 
-              onClick={() => navigate(area.name.toLowerCase())}
+            <div
+              key={area.name}
+              onClick={() => navigate(area.slug)}
               className="glass-panel p-8 cursor-pointer flex items-center justify-start gap-6 group active:scale-95 transition-transform"
             >
               <div className="w-16 h-16 rounded-[20px] bg-white/10 flex items-center justify-center shadow-inner border border-white/20 group-hover:scale-110 transition-transform">
@@ -71,18 +84,16 @@ const AreasMenu: React.FC = () => {
 
 const CatalogoCarreras: React.FC = () => {
   const navigate = useNavigate();
+  const { area } = useParams<{ area: string }>();
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
-  
-  const carreras = [
-    { id: 1, nombre: 'Ing. Sistemas', desc: 'Desarrolla el software del futuro.', icon: Laptop },
-    { id: 2, nombre: 'Ing. Industrial', desc: 'Optimiza procesos y recursos globalmente.', icon: Factory },
-    { id: 3, nombre: 'Ing. Civil', desc: 'Construye la infraestructura del mañana.', icon: HardHat },
-  ];
+
+  const currentArea = AREAS.find(a => a.slug === area);
+  const carrerasFiltradas = ALL_CARRERAS.filter(c => c.area === area);
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center p-8 overflow-hidden z-10 relative">
       <div className="fixed top-10 right-10 z-[100]">
-        <button 
+        <button
           onClick={() => navigate('..')}
           className="px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center gap-3 transition-colors border border-white/20 text-white font-medium active:scale-95 shadow-lg"
         >
@@ -90,14 +101,19 @@ const CatalogoCarreras: React.FC = () => {
           <X size={20} strokeWidth={2} />
         </button>
       </div>
-      <h1 className="text-4xl font-bold tracking-tight text-white mb-8 drop-shadow-lg">Catálogo de Carreras</h1>
-      
+      <h1 className="text-4xl font-bold tracking-tight text-white mb-8 drop-shadow-lg">
+        {currentArea ? `Carreras en ${currentArea.name}` : 'Catálogo de Carreras'}
+      </h1>
+
       <div className="flex gap-6 max-w-7xl overflow-x-auto pb-8 snap-x px-4 scrollbar-hide">
-        {carreras.map((c) => {
+        {carrerasFiltradas.length === 0 && (
+          <div className="text-white/60 font-medium text-lg">No se encontraron carreras para esta área.</div>
+        )}
+        {carrerasFiltradas.map((c) => {
           const Icon = c.icon;
           return (
-            <div 
-              key={c.id} 
+            <div
+              key={c.id}
               className="w-[280px] glass-panel p-8 flex flex-col items-center gap-6 snap-center shrink-0"
             >
               <div className="w-20 h-20 rounded-[24px] bg-white/10 flex items-center justify-center shadow-inner border border-white/20">
