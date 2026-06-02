@@ -72,11 +72,14 @@ export const Layout: React.FC = () => {
       <div className="absolute inset-0 bg-black/30 pointer-events-none z-0"></div>
 
       {location.pathname !== '/' && (
-        <div className="absolute top-10 left-10 z-[100]">
-          <GlassButton variant="glass" onClick={() => navigate('/')} className="!px-5 !py-3 shadow-lg hover:bg-white/20">
+        <div className="fixed top-10 left-10 z-[100]">
+          <button 
+            onClick={() => navigate('/')}
+            className="px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center gap-3 transition-colors border border-white/20 text-white font-medium active:scale-95 shadow-lg"
+          >
             <Home size={20} strokeWidth={2} />
             <span className="hidden md:inline font-medium">Inicio</span>
-          </GlassButton>
+          </button>
         </div>
       )}
 
