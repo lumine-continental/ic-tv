@@ -30,22 +30,10 @@ body {
 
 /* Utilidades Glassmorphism puro, sin color */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  transform: translateZ(0); /* Forzar aceleración GPU en Android Webview */
-  will-change: transform, backdrop-filter;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.5);
-  border-radius: 32px;
+  @apply backdrop-blur-[20px] bg-white/5 border border-white/15 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.5)] rounded-[32px];
 }
 
 /* App Icon style para el Home */
 .app-icon-squircle {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 8px 16px rgba(0,0,0,0.3);
-  border-radius: 22.5%; /* Squircle approximation */
+  @apply backdrop-blur-[20px] bg-white/10 border border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_8px_16px_rgba(0,0,0,0.3)] rounded-[22.5%];
 }

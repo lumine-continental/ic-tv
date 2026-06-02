@@ -63,7 +63,7 @@ export const Internacionalizacion: React.FC = () => {
 
         {selectedCountry && (
           <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8 z-20">
-            <div className="bg-black/75 backdrop-blur-2xl rounded-[32px] border border-white/20 shadow-2xl p-6 md:p-8 max-w-xl w-full flex flex-col items-center text-center gap-4">
+            <div className="bg-black/85 backdrop-blur-2xl rounded-[32px] border border-white/20 shadow-2xl p-6 md:p-8 max-w-xl w-full flex flex-col items-center text-center gap-4">
               <h2 className="text-3xl font-bold tracking-tight text-white">{selectedCountry.name}</h2>
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-[28px] bg-white/10 border border-white/20 flex items-center justify-center shadow-inner mt-2">
                 <User size={40} className="text-white md:w-12 md:h-12" strokeWidth={1} />
