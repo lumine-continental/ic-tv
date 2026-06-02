@@ -31,8 +31,8 @@ body {
 /* Utilidades Glassmorphism puro, sin color */
 .glass-panel {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
   transform: translateZ(0); /* Forzar aceleración GPU en Android Webview */
   will-change: transform, backdrop-filter;
   border: 1px solid rgba(255, 255, 255, 0.15);
