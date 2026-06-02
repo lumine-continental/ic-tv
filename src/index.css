@@ -30,11 +30,10 @@ body {
 
 /* Utilidades Glassmorphism puro, sin color */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.2); /* Fondo base más oscuro para garantizar legibilidad si el blur falla en Windows */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  transform: translateZ(0); /* Forzar aceleración GPU en Android Webview */
-  will-change: transform, backdrop-filter;
+  /* transform: translateZ(0); removido porque puede romper el blur en navegadores de escritorio */
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.5);
   border-radius: 32px;

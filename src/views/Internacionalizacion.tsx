@@ -17,8 +17,8 @@ interface CountryInfo {
 const countries: CountryInfo[] = [
   { id: 'mx', name: 'México', x: 20, y: 40, student: 'Ana García', career: 'Ing. Sistemas', videoUrl: 'https://www.youtube.com/watch?v=HhZaHf8RP6g' },
   { id: 'co', name: 'Colombia', x: 25, y: 55, student: 'Carlos Ruiz', career: 'Administración', videoUrl: 'https://www.youtube.com/watch?v=HhZaHf8RP6g' },
-  { id: 'fr', name: 'Francia', x: 50, y: 30, student: 'Marie Dupont', career: 'Ing. Industrial', videoUrl: 'https://www.youtube.com/watch?v=HhZaHf8RP6g' },
-  { id: 'ad', name: 'Andorra', x: 48, y: 32, student: 'Joan Martí', career: 'Turismo', videoUrl: 'https://www.youtube.com/watch?v=HhZaHf8RP6g' },
+  { id: 'fr', name: 'Francia', x: 52, y: 26, student: 'Marie Dupont', career: 'Ing. Industrial', videoUrl: 'https://www.youtube.com/watch?v=HhZaHf8RP6g' },
+  { id: 'ad', name: 'Andorra', x: 46, y: 34, student: 'Joan Martí', career: 'Turismo', videoUrl: 'https://www.youtube.com/watch?v=HhZaHf8RP6g' },
 ];
 
 export const Internacionalizacion: React.FC = () => {
@@ -63,7 +63,7 @@ export const Internacionalizacion: React.FC = () => {
 
         {selectedCountry && (
           <div className="absolute inset-0 bg-black/40 backdrop-blur-3xl flex items-center justify-center p-4 md:p-8 z-20">
-            <div className="glass-panel p-6 md:p-8 max-w-xl w-full flex flex-col items-center text-center gap-4">
+            <div className="glass-panel !bg-black/90 p-6 md:p-8 max-w-xl w-full flex flex-col items-center text-center gap-4">
               <h2 className="text-3xl font-bold tracking-tight text-white">{selectedCountry.name}</h2>
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-[28px] bg-white/10 border border-white/20 flex items-center justify-center shadow-inner mt-2">
                 <User size={40} className="text-white md:w-12 md:h-12" strokeWidth={1} />

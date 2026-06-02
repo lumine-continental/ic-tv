@@ -25,7 +25,7 @@ export const RutaContinental: React.FC = () => {
         
         {/* Step 1 */}
         <div className="glass-panel p-6 flex flex-col h-full hover:bg-white/5 transition-all border-t-4 border-t-[#F0223A]">
-          <div className="text-3xl font-black text-[#F0223A] italic mb-1 tracking-tighter">2 años</div>
+          <div className="text-3xl font-black text-[#F0223A] mb-1 tracking-tighter">2 años</div>
           <h2 className="text-xl font-bold text-white mb-2">Bachiller Técnico</h2>
           <div className="flex items-center gap-2 mb-4 text-white/80 font-medium text-sm">
             <BookOpen size={18} className="text-[#F0223A]" />
@@ -49,7 +49,7 @@ export const RutaContinental: React.FC = () => {
 
         {/* Step 2 */}
         <div className="glass-panel p-6 flex flex-col h-full hover:bg-white/5 transition-all border-t-4 border-t-[#F0223A]">
-          <div className="text-3xl font-black text-[#F0223A] italic mb-1 tracking-tighter">+1 año</div>
+          <div className="text-3xl font-black text-[#F0223A] mb-1 tracking-tighter">+1 año</div>
           <h2 className="text-xl font-bold text-white mb-2">Bachiller Profesional</h2>
           <div className="flex items-center gap-2 mb-4 text-white/80 font-medium text-sm">
             <GraduationCap size={18} className="text-[#F0223A]" />
@@ -72,7 +72,7 @@ export const RutaContinental: React.FC = () => {
 
         {/* Step 3 */}
         <div className="glass-panel p-6 flex flex-col h-full hover:bg-white/5 transition-all border-t-4 border-t-[#F0223A]">
-          <div className="text-3xl font-black text-[#F0223A] italic mb-1 tracking-tighter">+1 año</div>
+          <div className="text-3xl font-black text-[#F0223A] mb-1 tracking-tighter">+1 año</div>
           <h2 className="text-xl font-bold text-white mb-2">Maestría Internacional</h2>
           <div className="flex items-center gap-2 mb-4 text-white/80 font-medium text-sm">
             <Globe2 size={18} className="text-[#F0223A]" />
