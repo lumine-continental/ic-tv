@@ -4,18 +4,31 @@ import { X } from 'lucide-react';
 interface VideoModalProps {
   isOpen: boolean;
   onClose: () => void;
-  url: string; // Ya no usamos la URL de youtube embebida porque YT bloquea. Usamos MP4 directo.
+  url: string;
 }
 
-export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
+export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, url }) => {
   if (!isOpen) return null;
 
-  // Video local/CDN para asegurar la reproducción sin políticas de terceros
-  const demoVideoMp4 = "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4";
+  // Extraer ID del video para convertirlo en URL de Embed
+  const getEmbedUrl = (inputUrl: string) => {
+    let videoId = "HhZaHf8RP6g"; // Placeholder por defecto
+    if (inputUrl) {
+      if (inputUrl.includes('youtube.com/watch?v=')) {
+        videoId = inputUrl.split('v=')[1]?.split('&')[0] || videoId;
+      } else if (inputUrl.includes('youtu.be/')) {
+        videoId = inputUrl.split('youtu.be/')[1]?.split('?')[0] || videoId;
+      } else if (inputUrl.includes('youtube.com/embed/')) {
+        return inputUrl; 
+      }
+    }
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  };
+
+  const finalEmbedUrl = getEmbedUrl(url);
 
   return (
     <div className="fixed inset-0 z-[200] bg-black/95 flex flex-col items-center justify-center backdrop-blur-2xl">
-      {/* Botón de volver movido a la derecha */}
       <div className="fixed top-10 right-10 z-[300]">
         <button 
           onClick={onClose}
@@ -28,17 +41,13 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
       
       <div className="w-full max-w-6xl aspect-video glass-panel overflow-hidden shadow-2xl p-2 bg-white/5 border border-white/10">
         <div className="w-full h-full rounded-[24px] overflow-hidden bg-black relative shadow-inner">
-          {/* Reproductor HTML5 Nativo. 100% confiable, sin políticas de origen cruzado de YT */}
-          <video 
-            className="w-full h-full object-cover"
-            src={demoVideoMp4}
-            controls={true}
-            autoPlay={false} // A petición del usuario, sin autoplay
-            playsInline
-            poster="https://storage.googleapis.com/gtv-videos-bucket/sample/images/TearsOfSteel.jpg"
-          >
-            Tu navegador no soporta videos HTML5.
-          </video>
+          <iframe 
+            className="w-full h-full border-0"
+            src={finalEmbedUrl}
+            title="YouTube Video Player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
     </div>
