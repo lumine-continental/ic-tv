@@ -20,7 +20,7 @@ const ALL_CARRERAS = [
   { id: 4, area: 'diseno-tecnologia', nombre: 'Diseño de Modas', desc: 'Desarrolla colecciones de moda con visión global y altamente creativa.', icon: Scissors, videoUrl: 'https://www.youtube.com/watch?v=550YHk8FZaE' },
   { id: 5, area: 'diseno-tecnologia', nombre: 'Diseño Gráfico Publicitario', desc: 'Comunica visualmente mensajes estratégicos e impactantes.', icon: Palette, videoUrl: 'https://www.youtube.com/watch?v=SLPrKfNmsb0' },
   { id: 3, area: 'diseno-tecnologia', nombre: 'Desarrollo de Sistemas de Información', desc: 'Crea software, aplicaciones y soluciones tecnológicas del futuro.', icon: Laptop, videoUrl: 'https://www.youtube.com/watch?v=r2G3T7UvBLI' },
-  { id: 11, area: 'construccion-diseno', nombre: 'Diseño de Interiores', desc: 'Crea ambientes estéticos y funcionales que mejoran la calidad de vida.', icon: Palette, videoUrl: '' },
+  { id: 11, area: 'construccion-diseno', nombre: 'Diseño de Interiores', desc: 'Crea ambientes estéticos y funcionales que mejoran la calidad de vida.', icon: Palette, videoUrl: 'https://www.youtube.com/watch?v=SDLarVZye8A' },
   { id: 6, area: 'construccion-diseno', nombre: 'Gestión de la Construcción', desc: 'Administra y dirige proyectos de infraestructura moderna de alto nivel.', icon: HardHat, videoUrl: 'https://www.youtube.com/watch?v=cMj1-9K1oTM' },
   { id: 9, area: 'gastronomia', nombre: 'Gastronomía', desc: 'Domina las técnicas culinarias y lidera negocios de restaurantes.', icon: ChefHat, videoUrl: 'https://www.youtube.com/watch?v=n3IPGUziV1A' },
   { id: 7, area: 'salud', nombre: 'Enfermería', desc: 'Brinda cuidado integral y humanizado para promover la salud.', icon: Stethoscope, videoUrl: '' },
