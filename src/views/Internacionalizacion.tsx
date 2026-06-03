@@ -16,9 +16,10 @@ interface CountryInfo {
 
 const countries: CountryInfo[] = [
   { id: 'mx', name: 'México', x: 20, y: 40, student: 'Gerson Ventura', career: 'Administración', videoUrl: 'https://www.youtube.com/watch?v=3xonF8t9bU8' },
-  { id: 'co', name: 'Colombia', x: 25, y: 55, student: 'Jubitza Arroyo', career: 'Administración', videoUrl: 'https://www.youtube.com/watch?v=XNVBjRgFfuc' },
+  { id: 'co', name: 'Colombia', x: 25, y: 50, student: 'Jubitza Arroyo', career: 'Administración', videoUrl: 'https://www.youtube.com/watch?v=XNVBjRgFfuc' },
   { id: 'fr', name: 'Francia', x: 52, y: 26, student: 'Lalo Peña', career: 'Gastronomía', videoUrl: 'https://www.youtube.com/watch?v=JlSuTwDd8m8' },
   { id: 'ad', name: 'Andorra', x: 46, y: 34, student: 'José Luis Torres', career: 'Gastronomía', videoUrl: 'https://www.youtube.com/shorts/kvOdTBW_1ns' },
+  { id: 'pe', name: 'Perú', x: 22, y: 60, student: 'Jhony Baltazar', career: 'Administración', videoUrl: 'https://youtu.be/vD30bi6eC2w' },
 ];
 
 export const Internacionalizacion: React.FC = () => {

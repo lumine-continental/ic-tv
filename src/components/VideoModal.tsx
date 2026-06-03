@@ -18,6 +18,8 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, url }) 
         videoId = inputUrl.split('v=')[1]?.split('&')[0] || videoId;
       } else if (inputUrl.includes('youtu.be/')) {
         videoId = inputUrl.split('youtu.be/')[1]?.split('?')[0] || videoId;
+      } else if (inputUrl.includes('youtube.com/shorts/')) {
+        videoId = inputUrl.split('youtube.com/shorts/')[1]?.split('?')[0] || videoId;
       } else if (inputUrl.includes('youtube.com/embed/')) {
         return inputUrl; 
       }

@@ -22,7 +22,7 @@ export const RutaContinental: React.FC = () => {
       </p>
 
       <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 px-4">
-        
+
         {/* Step 1 */}
         <div className="glass-panel p-6 flex flex-col h-full hover:bg-white/5 transition-all border-t-4 border-t-[#F0223A]">
           <div className="text-3xl font-black text-[#F0223A] mb-1 tracking-tighter">2 años</div>
@@ -31,17 +31,17 @@ export const RutaContinental: React.FC = () => {
             <BookOpen size={18} className="text-[#F0223A]" />
             <span>Instituto Continental</span>
           </div>
-          
+
           <div className="bg-black/30 text-white/90 text-xs px-3 py-2 rounded-lg mb-4 border border-white/5">
             Grado a nombre de la Nación registrado en Minedu.
           </div>
-          
+
           <div className="flex flex-wrap gap-2 mb-6">
             <span className="bg-white/10 px-3 py-1 rounded-full text-[10px] uppercase tracking-wider text-white font-medium">Presencial</span>
             <span className="bg-white/10 px-3 py-1 rounded-full text-[10px] uppercase tracking-wider text-white font-medium">Semipresencial</span>
             <span className="bg-white/10 px-3 py-1 rounded-full text-[10px] uppercase tracking-wider text-white font-medium">A Distancia</span>
           </div>
-          
+
           <p className="text-white/60 text-xs mt-auto leading-relaxed">
             Domina habilidades prácticas de alto impacto y consolida tu perfil con tres años de experiencia real en el mercado laboral.
           </p>
@@ -55,16 +55,16 @@ export const RutaContinental: React.FC = () => {
             <GraduationCap size={18} className="text-[#F0223A]" />
             <span>Escuela Superior Continental</span>
           </div>
-          
+
           <div className="bg-black/30 text-white/90 text-xs px-3 py-2 rounded-lg mb-4 border border-white/5">
             Grado a nombre de la Nación registrado en Sunedu.
           </div>
-          
+
           <div className="flex flex-wrap gap-2 mb-6">
             <span className="bg-white/10 px-3 py-1 rounded-full text-[10px] uppercase tracking-wider text-white font-medium">Semipresencial</span>
             <span className="bg-white/10 px-3 py-1 rounded-full text-[10px] uppercase tracking-wider text-white font-medium">A Distancia</span>
           </div>
-          
+
           <p className="text-white/60 text-xs mt-auto leading-relaxed">
             Potencia tu perfil técnico con capacidades de investigación e innovación y amplía tu visión hacia nuevos mercados.
           </p>
@@ -78,15 +78,15 @@ export const RutaContinental: React.FC = () => {
             <Globe2 size={18} className="text-[#F0223A]" />
             <span>EE.UU. y España</span>
           </div>
-          
+
           <div className="bg-black/30 text-white/90 text-xs px-3 py-2 rounded-lg mb-4 border border-white/5">
             Reconocible en Sunedu.
           </div>
-          
+
           <div className="flex flex-wrap gap-2 mb-6">
             <span className="bg-white/10 px-3 py-1 rounded-full text-[10px] uppercase tracking-wider text-white font-medium">A Distancia</span>
           </div>
-          
+
           <p className="text-white/60 text-xs mt-auto leading-relaxed">
             Especialízate y expande tus horizontes profesionales con nuestra red de universidades aliadas en Estados Unidos y España.
           </p>
@@ -94,7 +94,7 @@ export const RutaContinental: React.FC = () => {
 
       </div>
 
-      <GlassButton variant="primary" showChevron className="!px-8 !py-3 text-sm mb-8 md:mb-0" onClick={() => setVideoUrl('https://www.youtube.com/watch?v=HhZaHf8RP6g')}>
+      <GlassButton variant="primary" showChevron className="!px-8 !py-3 text-sm mb-8 md:mb-0" onClick={() => setVideoUrl('https://youtu.be/O6dp2FGI-aY')}>
         Ver Explicación
       </GlassButton>
 

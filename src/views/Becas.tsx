@@ -13,7 +13,7 @@ const BecasMenu: React.FC = () => {
         Programas de Becas
       </h1>
       <div className="flex gap-12 w-full max-w-4xl">
-        <div 
+        <div
           onClick={() => navigate('beca-18')}
           className="flex-1 glass-panel p-10 cursor-pointer flex flex-col items-center justify-center gap-6 group active:scale-95 transition-transform"
         >
@@ -22,7 +22,7 @@ const BecasMenu: React.FC = () => {
           </div>
           <h2 className="text-2xl font-semibold">Beca 18</h2>
         </div>
-        <div 
+        <div
           onClick={() => navigate('excelencia')}
           className="flex-1 glass-panel p-10 cursor-pointer flex flex-col items-center justify-center gap-6 group active:scale-95 transition-transform"
         >
@@ -36,14 +36,19 @@ const BecasMenu: React.FC = () => {
   );
 };
 
-const BecaDetalle: React.FC<{ title: string; desc: string; videoUrl: string }> = ({ title, desc, videoUrl }) => {
-  const [isOpen, setIsOpen] = useState(false);
+interface VideoOption {
+  url: string;
+  label: string;
+}
+
+const BecaDetalle: React.FC<{ title: string; desc: string; videos?: VideoOption[] }> = ({ title, desc, videos = [] }) => {
+  const [currentVideo, setCurrentVideo] = useState<string | null>(null);
   const navigate = useNavigate();
-  
+
   return (
     <div className="w-full h-full flex flex-col items-center justify-center p-8 z-10 relative">
       <div className="fixed top-10 right-10 z-[100]">
-        <button 
+        <button
           onClick={() => navigate('..')}
           className="px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center gap-3 transition-colors border border-white/20 text-white font-medium active:scale-95 shadow-lg"
         >
@@ -58,12 +63,19 @@ const BecaDetalle: React.FC<{ title: string; desc: string; videoUrl: string }> =
         </div>
         <h1 className="text-3xl font-bold text-white tracking-tight">{title}</h1>
         <p className="text-lg text-white/70 leading-relaxed max-w-2xl font-medium">{desc}</p>
-        <GlassButton variant="primary" showChevron onClick={() => setIsOpen(true)} className="mt-4 !px-10 !py-3 text-sm">
-          Ver Testimonio
-        </GlassButton>
+        
+        {videos.length > 0 && (
+          <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center">
+            {videos.map((vid, i) => (
+              <GlassButton key={i} variant="primary" showChevron onClick={() => setCurrentVideo(vid.url)} className="!px-8 !py-3 text-sm">
+                {vid.label}
+              </GlassButton>
+            ))}
+          </div>
+        )}
       </div>
 
-      <VideoModal isOpen={isOpen} onClose={() => setIsOpen(false)} url={videoUrl} />
+      <VideoModal isOpen={!!currentVideo} onClose={() => setCurrentVideo(null)} url={currentVideo || ''} />
     </div>
   );
 };
@@ -79,21 +91,24 @@ export const Becas: React.FC = () => {
   return (
     <Routes>
       <Route index element={<BecasMenu />} />
-      <Route 
-        path="beca-18" 
-        element={<BecaDetalle 
-          title="Beca 18" 
-          desc="Oportunidad integral para jóvenes talentos de todo el país. Cubre costos académicos, alimentación, movilidad y materiales de estudio." 
-          videoUrl="https://youtu.be/HhZaHf8RP6g" 
-        />} 
+      <Route
+        path="beca-18"
+        element={<BecaDetalle
+          title="Beca 18"
+          desc="Oportunidad integral para jóvenes talentos de todo el país. Cubre costos académicos, alimentación, movilidad y materiales de estudio."
+          videos={[
+            { url: "https://www.youtube.com/shorts/gsOF1bEBFDE", label: "Ver Video 1" },
+            { url: "https://www.youtube.com/shorts/XrkwCVZifEU", label: "Ver Video 2" }
+          ]}
+        />}
       />
-      <Route 
-        path="excelencia" 
-        element={<BecaDetalle 
-          title="Beca Excelencia" 
-          desc="Premia tu esfuerzo académico durante la secundaria con descuentos especiales y beneficios exclusivos en tu carrera profesional." 
-          videoUrl="https://youtu.be/HhZaHf8RP6g" 
-        />} 
+      <Route
+        path="excelencia"
+        element={<BecaDetalle
+          title="Beca Excelencia"
+          desc="Obtendrás una beca si ocupas el primer puesto de tu periodo académico al término del semestre y media beca si te ubicas en el segundo lugar."
+          videos={[]}
+        />}
       />
     </Routes>
   );
