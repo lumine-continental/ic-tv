@@ -48,9 +48,10 @@ export const Layout: React.FC = () => {
     if (path === '/') return "url('/bg-main.jpg')";
     if (path.includes('quienes-somos')) return "url('/bg-info.jpg')";
     if (path.includes('becas')) return "url('/bg_glass_1.jpg')";
-    if (path.includes('carreras')) return "url('/bg_glass_2.jpg')";
+    if (path.includes('carreras')) return "url('/bg-info.jpg')";
     if (path.includes('internacionalizacion')) return "url('/bg_glass_3.jpg')";
     if (path.includes('ruta-continental')) return "url('/bg_glass_4.jpg')";
+    if (path.includes('empleabilidad')) return "url('/bg_glass_3.jpg')";
     if (path.includes('qr')) return "url('/bg-main.jpg')";
     return "url('/bg-main.jpg')";
   }, [location.pathname]);
