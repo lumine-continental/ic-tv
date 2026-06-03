@@ -40,12 +40,12 @@ export const Home: React.FC = () => {
         />
       </div>
 
-      <div className="flex flex-col items-center justify-center w-full max-w-4xl shrink-0">
+      <div className="flex flex-col items-center justify-center w-full max-w-3xl shrink-0">
         {/* 
           En pantallas pequeñas (vertical): Grid de 2 columnas (iconos cuadrados).
           En pantallas md/grandes (horizontal): Grid de 3 columnas (3x2).
         */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-12 place-items-center w-full">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12 place-items-center w-full">
           {menuItems.map((item) => {
             const Icon = item.icon;
             
