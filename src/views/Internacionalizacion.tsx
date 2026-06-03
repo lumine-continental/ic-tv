@@ -15,10 +15,10 @@ interface CountryInfo {
 }
 
 const countries: CountryInfo[] = [
-  { id: 'mx', name: 'México', x: 20, y: 40, student: 'Ana García', career: 'Ing. Sistemas', videoUrl: 'https://www.youtube.com/watch?v=HhZaHf8RP6g' },
-  { id: 'co', name: 'Colombia', x: 25, y: 55, student: 'Carlos Ruiz', career: 'Administración', videoUrl: 'https://www.youtube.com/watch?v=HhZaHf8RP6g' },
-  { id: 'fr', name: 'Francia', x: 52, y: 26, student: 'Marie Dupont', career: 'Ing. Industrial', videoUrl: 'https://www.youtube.com/watch?v=HhZaHf8RP6g' },
-  { id: 'ad', name: 'Andorra', x: 46, y: 34, student: 'Joan Martí', career: 'Turismo', videoUrl: 'https://www.youtube.com/watch?v=HhZaHf8RP6g' },
+  { id: 'mx', name: 'México', x: 20, y: 40, student: 'Gerson Ventura', career: 'Administración', videoUrl: 'https://www.youtube.com/watch?v=3xonF8t9bU8' },
+  { id: 'co', name: 'Colombia', x: 25, y: 55, student: 'Jubitza Arroyo', career: 'Administración', videoUrl: 'https://www.youtube.com/watch?v=XNVBjRgFfuc' },
+  { id: 'fr', name: 'Francia', x: 52, y: 26, student: 'Lalo Peña', career: 'Gastronomía', videoUrl: 'https://www.youtube.com/watch?v=JlSuTwDd8m8' },
+  { id: 'ad', name: 'Andorra', x: 46, y: 34, student: 'José Luis Torres', career: 'Gastronomía', videoUrl: 'https://www.youtube.com/shorts/kvOdTBW_1ns' },
 ];
 
 export const Internacionalizacion: React.FC = () => {

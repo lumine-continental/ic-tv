@@ -14,15 +14,15 @@ const AREAS = [
 
 const ALL_CARRERAS = [
   { id: 1, area: 'negocios', nombre: 'Administración de Empresas', desc: 'Lidera organizaciones y gestiona recursos para el éxito empresarial global.', icon: Building2, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
-  { id: 2, area: 'negocios', nombre: 'Contabilidad', desc: 'Domina las finanzas y toma decisiones estratégicas basadas en datos.', icon: Calculator, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
-  { id: 10, area: 'negocios', nombre: 'Administración y Negocios Bancarios', desc: 'Gestiona instituciones financieras e impulsa el crecimiento económico del país.', icon: Landmark, videoUrl: 'https://www.youtube.com/watch?v=q1bn8EjGKIM' },
+  { id: 2, area: 'negocios', nombre: 'Contabilidad', desc: 'Domina las finanzas y toma decisiones estratégicas basadas en datos.', icon: Calculator, videoUrl: 'https://www.youtube.com/watch?v=cj1pFbDqyYc' },
+  { id: 10, area: 'negocios', nombre: 'Administración y Negocios Bancarios', desc: 'Gestiona instituciones financieras e impulsa el crecimiento económico del país.', icon: Landmark, videoUrl: 'https://www.youtube.com/watch?v=fqIShaoubxo' },
   { id: 3, area: 'tecnologia', nombre: 'Desarrollo de Sistemas', desc: 'Crea software, aplicaciones y soluciones tecnológicas del futuro.', icon: Laptop, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
-  { id: 4, area: 'tecnologia', nombre: 'Diseño de Modas', desc: 'Desarrolla colecciones de moda con visión global y altamente creativa.', icon: Scissors, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
-  { id: 5, area: 'tecnologia', nombre: 'Diseño Gráfico Publicitario', desc: 'Comunica visualmente mensajes estratégicos e impactantes.', icon: Palette, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
-  { id: 6, area: 'tecnologia', nombre: 'Gestión de la Construcción', desc: 'Administra y dirige proyectos de infraestructura moderna de alto nivel.', icon: HardHat, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
+  { id: 4, area: 'tecnologia', nombre: 'Diseño de Modas', desc: 'Desarrolla colecciones de moda con visión global y altamente creativa.', icon: Scissors, videoUrl: 'https://www.youtube.com/watch?v=550YHk8FZaE' },
+  { id: 5, area: 'tecnologia', nombre: 'Diseño Gráfico Publicitario', desc: 'Comunica visualmente mensajes estratégicos e impactantes.', icon: Palette, videoUrl: 'https://www.youtube.com/watch?v=SLPrKfNmsb0' },
+  { id: 6, area: 'tecnologia', nombre: 'Gestión de la Construcción', desc: 'Administra y dirige proyectos de infraestructura moderna de alto nivel.', icon: HardHat, videoUrl: 'https://www.youtube.com/watch?v=cMj1-9K1oTM' },
   { id: 7, area: 'salud', nombre: 'Enfermería', desc: 'Brinda cuidado integral y humanizado para promover la salud.', icon: Stethoscope, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
   { id: 8, area: 'salud', nombre: 'Farmacia', desc: 'Asegura el uso racional de medicamentos y mejora la salud pública.', icon: HeartPulse, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
-  { id: 9, area: 'culinaria', nombre: 'Gastronomía', desc: 'Domina las técnicas culinarias y lidera negocios de restaurantes.', icon: ChefHat, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
+  { id: 9, area: 'culinaria', nombre: 'Gastronomía', desc: 'Domina las técnicas culinarias y lidera negocios de restaurantes.', icon: ChefHat, videoUrl: 'https://www.youtube.com/watch?v=n3IPGUziV1A' },
 ];
 
 const CarrerasMenu: React.FC = () => {
