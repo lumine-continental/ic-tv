@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useGamificationStore } from '../store/useGamificationStore';
-import { Info, GraduationCap, Building2, Globe, Map, Trophy } from 'lucide-react';
+import { Info, GraduationCap, Building2, Globe, Map, Trophy, Briefcase } from 'lucide-react';
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ export const Home: React.FC = () => {
   }, [markVisited]);
 
   useEffect(() => {
-    const mainSections = ['quienes-somos', 'becas', 'carreras', 'internacionalizacion', 'ruta-continental'];
+    const mainSections = ['quienes-somos', 'becas', 'carreras', 'internacionalizacion', 'ruta-continental', 'empleabilidad'];
     const allVisited = mainSections.every(sec => visitedSections.includes(sec));
     if (allVisited) {
       unlockAchievement('Explorador Experto');
@@ -25,6 +25,7 @@ export const Home: React.FC = () => {
     { path: '/carreras', label: 'Carreras', icon: Building2 },
     { path: '/internacionalizacion', label: 'Global', icon: Globe },
     { path: '/ruta-continental', label: 'La Ruta', icon: Map },
+    { path: '/empleabilidad', label: 'Empleabilidad', icon: Briefcase },
   ];
 
   return (
@@ -42,9 +43,9 @@ export const Home: React.FC = () => {
       <div className="flex flex-col items-center justify-center w-full max-w-4xl shrink-0">
         {/* 
           En pantallas pequeñas (vertical): Grid de 2 columnas (iconos cuadrados).
-          En pantallas md/grandes (horizontal): Grid de 5 columnas (5x1).
+          En pantallas md/grandes (horizontal): Grid de 3 columnas (3x2).
         */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-8 gap-y-12 place-items-center w-full">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-12 place-items-center w-full">
           {menuItems.map((item) => {
             const Icon = item.icon;
             
@@ -72,7 +73,7 @@ export const Home: React.FC = () => {
           Progreso
         </span>
         <div className="flex gap-4">
-          {Array.from({ length: 5 }).map((_, i) => {
+          {Array.from({ length: 6 }).map((_, i) => {
             const progreso = Math.max(0, visitedSections.length - 1);
             const isCompleted = i < progreso;
             return (
