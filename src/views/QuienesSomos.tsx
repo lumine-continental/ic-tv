@@ -25,9 +25,9 @@ export const QuienesSomos: React.FC = () => {
           </div>
           <div>
             <h2 className="text-2xl font-semibold mb-2">Video Institucional</h2>
-            <p className="text-sm md:text-base text-white/70 leading-relaxed font-medium">Conoce nuestra historia y visión para el futuro. Descubre por qué somos tu mejor opción.</p>
+            <p className="text-sm md:text-base text-white/70 leading-relaxed font-medium">Conoce al Instituto Continental. Descubre por qué somos tu mejor opción.</p>
           </div>
-          <GlassButton variant="primary" showChevron onClick={() => setVideoUrl('https://www.youtube.com/watch?v=HhZaHf8RP6g')} className="w-full max-w-sm mt-2 !py-3 text-sm">
+          <GlassButton variant="primary" showChevron onClick={() => setVideoUrl('https://youtu.be/f_TunHaKeUY')} className="w-full max-w-sm mt-2 !py-3 text-sm">
             Reproducir Video
           </GlassButton>
         </div>
@@ -37,19 +37,19 @@ export const QuienesSomos: React.FC = () => {
             <Award size={32} strokeWidth={1.5} className="text-white md:w-10 md:h-10" />
           </div>
           <div>
-            <h2 className="text-2xl font-semibold mb-2">Identidad Institucional</h2>
-            <p className="text-sm md:text-base text-white/70 leading-relaxed font-medium">Nuestros valores, pilares y compromiso inquebrantable con el éxito de nuestros estudiantes.</p>
+            <h2 className="text-2xl font-semibold mb-2">Somos parte de CIE</h2>
+            <p className="text-sm md:text-base text-white/70 leading-relaxed font-medium">Continental International Education es la unión de las mejores experiencias en licenciaturas, carreras técnicas, associate degrees, posgrados, educación continua e idiomas.</p>
           </div>
-          <GlassButton variant="primary" showChevron onClick={() => setVideoUrl('https://www.youtube.com/watch?v=HhZaHf8RP6g')} className="w-full max-w-sm mt-2 !py-3 text-sm">
+          <GlassButton variant="primary" showChevron onClick={() => setVideoUrl('https://youtu.be/55w101CL1u0')} className="w-full max-w-sm mt-2 !py-3 text-sm">
             Reproducir Video
           </GlassButton>
         </div>
       </div>
 
-      <VideoModal 
-        isOpen={!!videoUrl} 
-        onClose={() => setVideoUrl(null)} 
-        url={videoUrl || ''} 
+      <VideoModal
+        isOpen={!!videoUrl}
+        onClose={() => setVideoUrl(null)}
+        url={videoUrl || ''}
       />
     </div>
   );

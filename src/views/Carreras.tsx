@@ -3,7 +3,7 @@ import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import { GlassButton } from '../components/GlassButton';
 import { VideoModal } from '../components/VideoModal';
 import { useGamificationStore } from '../store/useGamificationStore';
-import { Building2, Laptop, HardHat, Briefcase, HeartPulse, X, Palette, Scissors, Stethoscope, Calculator, ChefHat } from 'lucide-react';
+import { Building2, Laptop, HardHat, Briefcase, HeartPulse, X, Palette, Scissors, Stethoscope, Calculator, ChefHat, Landmark } from 'lucide-react';
 
 const AREAS = [
   { name: 'Tecnología', slug: 'tecnologia', icon: Laptop },
@@ -13,15 +13,16 @@ const AREAS = [
 ];
 
 const ALL_CARRERAS = [
-  { id: 1, area: 'negocios', nombre: 'Administración de Empresas', desc: 'Lidera organizaciones y gestiona recursos para el éxito empresarial global.', icon: Building2 },
-  { id: 2, area: 'negocios', nombre: 'Contabilidad', desc: 'Domina las finanzas y toma decisiones estratégicas basadas en datos.', icon: Calculator },
-  { id: 3, area: 'tecnologia', nombre: 'Desarrollo de Sistemas', desc: 'Crea software, aplicaciones y soluciones tecnológicas del futuro.', icon: Laptop },
-  { id: 4, area: 'tecnologia', nombre: 'Diseño de Modas', desc: 'Desarrolla colecciones de moda con visión global y altamente creativa.', icon: Scissors },
-  { id: 5, area: 'tecnologia', nombre: 'Diseño Gráfico Publicitario', desc: 'Comunica visualmente mensajes estratégicos e impactantes.', icon: Palette },
-  { id: 6, area: 'tecnologia', nombre: 'Gestión de la Construcción', desc: 'Administra y dirige proyectos de infraestructura moderna de alto nivel.', icon: HardHat },
-  { id: 7, area: 'salud', nombre: 'Enfermería', desc: 'Brinda cuidado integral y humanizado para promover la salud.', icon: Stethoscope },
-  { id: 8, area: 'salud', nombre: 'Farmacia', desc: 'Asegura el uso racional de medicamentos y mejora la salud pública.', icon: HeartPulse },
-  { id: 9, area: 'culinaria', nombre: 'Gastronomía', desc: 'Domina las técnicas culinarias y lidera negocios de restaurantes.', icon: ChefHat },
+  { id: 1, area: 'negocios', nombre: 'Administración de Empresas', desc: 'Lidera organizaciones y gestiona recursos para el éxito empresarial global.', icon: Building2, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
+  { id: 2, area: 'negocios', nombre: 'Contabilidad', desc: 'Domina las finanzas y toma decisiones estratégicas basadas en datos.', icon: Calculator, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
+  { id: 10, area: 'negocios', nombre: 'Administración y Negocios Bancarios', desc: 'Gestiona instituciones financieras e impulsa el crecimiento económico del país.', icon: Landmark, videoUrl: 'https://www.youtube.com/watch?v=q1bn8EjGKIM' },
+  { id: 3, area: 'tecnologia', nombre: 'Desarrollo de Sistemas', desc: 'Crea software, aplicaciones y soluciones tecnológicas del futuro.', icon: Laptop, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
+  { id: 4, area: 'tecnologia', nombre: 'Diseño de Modas', desc: 'Desarrolla colecciones de moda con visión global y altamente creativa.', icon: Scissors, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
+  { id: 5, area: 'tecnologia', nombre: 'Diseño Gráfico Publicitario', desc: 'Comunica visualmente mensajes estratégicos e impactantes.', icon: Palette, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
+  { id: 6, area: 'tecnologia', nombre: 'Gestión de la Construcción', desc: 'Administra y dirige proyectos de infraestructura moderna de alto nivel.', icon: HardHat, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
+  { id: 7, area: 'salud', nombre: 'Enfermería', desc: 'Brinda cuidado integral y humanizado para promover la salud.', icon: Stethoscope, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
+  { id: 8, area: 'salud', nombre: 'Farmacia', desc: 'Asegura el uso racional de medicamentos y mejora la salud pública.', icon: HeartPulse, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
+  { id: 9, area: 'culinaria', nombre: 'Gastronomía', desc: 'Domina las técnicas culinarias y lidera negocios de restaurantes.', icon: ChefHat, videoUrl: 'https://youtu.be/HhZaHf8RP6g' },
 ];
 
 const CarrerasMenu: React.FC = () => {
@@ -121,7 +122,7 @@ const CatalogoCarreras: React.FC = () => {
               </div>
               <h3 className="text-xl text-center font-bold tracking-tight">{c.nombre}</h3>
               <p className="text-base text-center text-white/70 leading-relaxed font-medium flex-1">{c.desc}</p>
-              <GlassButton variant="primary" showChevron onClick={() => setVideoUrl('https://youtu.be/HhZaHf8RP6g')} className="w-full !py-3 text-sm">
+              <GlassButton variant="primary" showChevron onClick={() => setVideoUrl(c.videoUrl)} className="w-full !py-3 text-sm">
                 Ver Detalles
               </GlassButton>
             </div>
