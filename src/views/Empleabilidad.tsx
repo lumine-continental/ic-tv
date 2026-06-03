@@ -30,7 +30,7 @@ export const Empleabilidad: React.FC = () => {
         </button>
       </div>
       <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-12 drop-shadow-lg">Empleabilidad</h1>
-      
+
       <div className="flex flex-col md:flex-row gap-6 max-w-6xl w-full px-4 items-stretch justify-center">
         {items.map((item, idx) => {
           const Icon = item.icon;
@@ -39,7 +39,7 @@ export const Empleabilidad: React.FC = () => {
               <div className="w-20 h-20 rounded-[28px] bg-white/10 flex items-center justify-center shadow-inner border border-white/20 group-hover:scale-110 transition-transform duration-500 shrink-0">
                 <Icon size={40} className="text-white" strokeWidth={1.5} />
               </div>
-              <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-semibold">{item.text}</p>
+              <p className="text-base md:text-lg text-white/90 leading-relaxed font-semibold">{item.text}</p>
             </div>
           );
         })}
