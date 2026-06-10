@@ -66,13 +66,15 @@ export const Layout: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8 }}
-            className="absolute inset-0 bg-black z-0 overflow-hidden"
+            className="absolute inset-0 bg-black z-0 overflow-hidden flex items-center justify-center"
           >
             <iframe 
               src="https://www.youtube.com/embed/Fd-Z-69vAKc?autoplay=1&mute=1&loop=1&playlist=Fd-Z-69vAKc&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1" 
-              className="w-full h-full min-w-[100vw] min-h-[100vh] sm:min-h-[100vw] object-cover pointer-events-none scale-[1.7] md:scale-[1.2]"
+              className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
               allow="autoplay; encrypted-media"
             />
+            {/* Overlay adicional para oscurecer el video y dar contraste */}
+            <div className="absolute inset-0 bg-black/40 pointer-events-none z-10"></div>
           </motion.div>
         ) : (
           <motion.div 

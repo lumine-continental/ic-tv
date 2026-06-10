@@ -59,9 +59,11 @@ export const Home: React.FC = () => {
                 <div className="w-24 h-24 md:w-28 md:h-28 rounded-[22.5%] bg-white/10 backdrop-blur-xl border border-white/10 flex items-center justify-center transition-transform duration-300 active:scale-95 group-active:opacity-70 shadow-sm hover:bg-white/15">
                   <Icon size={40} strokeWidth={1.5} className="text-white" />
                 </div>
-                <span className="text-sm font-medium text-white/90 tracking-wide text-center">
-                  {item.label}
-                </span>
+                <div className="bg-black/50 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10 mt-2">
+                  <span className="text-sm font-semibold text-white tracking-wide text-center drop-shadow-md">
+                    {item.label}
+                  </span>
+                </div>
               </div>
             );
           })}
