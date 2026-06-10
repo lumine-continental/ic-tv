@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useGamificationStore } from '../store/useGamificationStore';
 import { Info, GraduationCap, Building2, Globe, Map, Trophy, Briefcase } from 'lucide-react';
+import { GlassButton } from '../components/GlassButton';
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -86,6 +87,12 @@ export const Home: React.FC = () => {
             )
           })}
         </div>
+      </div>
+
+      <div className="absolute bottom-6 md:bottom-8 right-6 md:right-8 z-50">
+        <GlassButton variant="transparent" onClick={() => navigate('/admision')} className="!px-6 !py-3 md:!px-10 md:!py-4 font-bold tracking-widest text-sm md:text-base border-2 border-white/20 hover:bg-white/10 active:scale-95 transition-all shadow-xl">
+          ADMISIÓN
+        </GlassButton>
       </div>
       
     </div>

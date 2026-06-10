@@ -59,15 +59,32 @@ export const Layout: React.FC = () => {
   return (
     <div className="w-full h-full text-white overflow-hidden relative font-modern bg-black">
       <AnimatePresence mode="wait">
-        <motion.div 
-          key={bgImage}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8 }}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-          style={{ backgroundImage: bgImage }}
-        />
+        {location.pathname === '/' ? (
+          <motion.div 
+            key="video-bg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            className="absolute inset-0 bg-black z-0 overflow-hidden"
+          >
+            <iframe 
+              src="https://www.youtube.com/embed/Fd-Z-69vAKc?autoplay=1&mute=1&loop=1&playlist=Fd-Z-69vAKc&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1" 
+              className="w-full h-full min-w-[100vw] min-h-[100vh] sm:min-h-[100vw] object-cover pointer-events-none scale-[1.7] md:scale-[1.2]"
+              allow="autoplay; encrypted-media"
+            />
+          </motion.div>
+        ) : (
+          <motion.div 
+            key={bgImage}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+            style={{ backgroundImage: bgImage }}
+          />
+        )}
       </AnimatePresence>
 
       <div className="absolute inset-0 bg-black/30 pointer-events-none z-0"></div>

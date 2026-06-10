@@ -9,6 +9,7 @@ import { Internacionalizacion } from './views/Internacionalizacion';
 import { RutaContinental } from './views/RutaContinental';
 
 import { Empleabilidad } from './views/Empleabilidad';
+import { Admision } from './views/Admision';
 import { QrCode } from './views/QrCode';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="internacionalizacion" element={<Internacionalizacion />} />
           <Route path="ruta-continental" element={<RutaContinental />} />
           <Route path="empleabilidad" element={<Empleabilidad />} />
+          <Route path="admision" element={<Admision />} />
           <Route path="qr" element={<QrCode />} />
         </Route>
       </Routes>
