@@ -13,16 +13,12 @@ export const RutaContinental: React.FC = () => {
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center p-4 md:p-8 z-10 relative overflow-y-auto">
-      <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-8 drop-shadow-lg text-center mt-8 md:mt-0">
-        La Ruta Continental
-      </h1>
-
-      <div className="w-full max-w-5xl aspect-[16/10] glass-panel overflow-hidden shadow-2xl p-2 bg-white/5 border border-white/10 mb-8 px-4 md:px-2">
-        <div className="w-full h-full rounded-[24px] overflow-hidden bg-black/50 relative shadow-inner flex items-center justify-center">
+      <div className="w-full max-w-7xl aspect-video md:aspect-[21/9] glass-panel overflow-hidden shadow-2xl p-0 bg-transparent border-0 mb-8 mt-4">
+        <div className="w-full h-full rounded-[24px] overflow-hidden bg-transparent relative flex items-center justify-center">
           <img 
             src="/imagen-ruta.jpg" 
             alt="Ruta Continental" 
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover md:object-contain drop-shadow-2xl scale-105"
           />
         </div>
       </div>

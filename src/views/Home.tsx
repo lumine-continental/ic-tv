@@ -13,7 +13,7 @@ export const Home: React.FC = () => {
   }, [markVisited]);
 
   useEffect(() => {
-    const mainSections = ['quienes-somos', 'becas', 'carreras', 'internacionalizacion', 'ruta-continental', 'empleabilidad'];
+    const mainSections = ['quienes-somos', 'becas', 'carreras', 'internacionalizacion', 'ruta-continental', 'empleabilidad', 'admision'];
     const allVisited = mainSections.every(sec => visitedSections.includes(sec));
     if (allVisited) {
       unlockAchievement('Explorador Experto');
@@ -76,7 +76,7 @@ export const Home: React.FC = () => {
           Progreso
         </span>
         <div className="flex gap-4">
-          {Array.from({ length: 6 }).map((_, i) => {
+          {Array.from({ length: 7 }).map((_, i) => {
             const progreso = Math.max(0, visitedSections.length - 1);
             const isCompleted = i < progreso;
             return (

@@ -24,8 +24,8 @@ export const Layout: React.FC = () => {
 
   // Verificar si se completó el progreso
   useEffect(() => {
-    // Si quitamos el "home", quedan 6 secciones principales
-    const mainSections = ['quienes-somos', 'becas', 'carreras', 'internacionalizacion', 'ruta-continental', 'empleabilidad'];
+    // Si quitamos el "home", quedan 7 secciones principales
+    const mainSections = ['quienes-somos', 'becas', 'carreras', 'internacionalizacion', 'ruta-continental', 'empleabilidad', 'admision'];
     const allVisited = mainSections.every(sec => visitedSections.includes(sec));
     if (allVisited && location.pathname === '/') {
       setShowCompletionModal(true);
