@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { GlassButton } from '../components/GlassButton';
 import { VideoModal } from '../components/VideoModal';
 import { useGamificationStore } from '../store/useGamificationStore';
-import { GraduationCap, BookOpen, Globe2 } from 'lucide-react';
 
 export const RutaContinental: React.FC = () => {
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
@@ -21,81 +20,18 @@ export const RutaContinental: React.FC = () => {
         El camino de formación continua e internacionalización que te permite obtener grados académicos de alto nivel, empezando desde una formación técnica hasta alcanzar una maestría internacional.
       </p>
 
-      <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 px-4">
-
-        {/* Step 1 */}
-        <div className="glass-panel p-6 flex flex-col h-full hover:bg-white/5 transition-all border-t-4 border-t-[#F0223A]">
-          <div className="text-3xl font-black text-[#F0223A] mb-1 tracking-tighter">2 años</div>
-          <h2 className="text-xl font-bold text-white mb-2">Bachiller Técnico</h2>
-          <div className="flex items-center gap-2 mb-4 text-white/80 font-medium text-sm">
-            <BookOpen size={18} className="text-[#F0223A]" />
-            <span>Instituto Continental</span>
-          </div>
-
-          <div className="bg-black/30 text-white/90 text-xs px-3 py-2 rounded-lg mb-4 border border-white/5">
-            Grado a nombre de la Nación registrado en Minedu.
-          </div>
-
-          <div className="flex flex-wrap gap-2 mb-6">
-            <span className="bg-white/10 px-3 py-1 rounded-full text-[10px] uppercase tracking-wider text-white font-medium">Presencial</span>
-            <span className="bg-white/10 px-3 py-1 rounded-full text-[10px] uppercase tracking-wider text-white font-medium">Semipresencial</span>
-            <span className="bg-white/10 px-3 py-1 rounded-full text-[10px] uppercase tracking-wider text-white font-medium">A Distancia</span>
-          </div>
-
-          <p className="text-white/60 text-xs mt-auto leading-relaxed">
-            Domina habilidades prácticas de alto impacto y consolida tu perfil con tres años de experiencia real en el mercado laboral.
-          </p>
+      <div className="w-full max-w-5xl aspect-[16/10] glass-panel overflow-hidden shadow-2xl p-2 bg-white/5 border border-white/10 mb-8 px-4 md:px-2">
+        <div className="w-full h-full rounded-[24px] overflow-hidden bg-black/50 relative shadow-inner flex items-center justify-center">
+          <img 
+            src="/imagen-ruta.jpg" 
+            alt="Ruta Continental" 
+            className="w-full h-full object-contain"
+          />
         </div>
-
-        {/* Step 2 */}
-        <div className="glass-panel p-6 flex flex-col h-full hover:bg-white/5 transition-all border-t-4 border-t-[#F0223A]">
-          <div className="text-3xl font-black text-[#F0223A] mb-1 tracking-tighter">+1 año</div>
-          <h2 className="text-xl font-bold text-white mb-2">Bachiller Profesional</h2>
-          <div className="flex items-center gap-2 mb-4 text-white/80 font-medium text-sm">
-            <GraduationCap size={18} className="text-[#F0223A]" />
-            <span>Escuela Superior Continental</span>
-          </div>
-
-          <div className="bg-black/30 text-white/90 text-xs px-3 py-2 rounded-lg mb-4 border border-white/5">
-            Grado a nombre de la Nación registrado en Sunedu.
-          </div>
-
-          <div className="flex flex-wrap gap-2 mb-6">
-            <span className="bg-white/10 px-3 py-1 rounded-full text-[10px] uppercase tracking-wider text-white font-medium">Semipresencial</span>
-            <span className="bg-white/10 px-3 py-1 rounded-full text-[10px] uppercase tracking-wider text-white font-medium">A Distancia</span>
-          </div>
-
-          <p className="text-white/60 text-xs mt-auto leading-relaxed">
-            Potencia tu perfil técnico con capacidades de investigación e innovación y amplía tu visión hacia nuevos mercados.
-          </p>
-        </div>
-
-        {/* Step 3 */}
-        <div className="glass-panel p-6 flex flex-col h-full hover:bg-white/5 transition-all border-t-4 border-t-[#F0223A]">
-          <div className="text-3xl font-black text-[#F0223A] mb-1 tracking-tighter">+1 año</div>
-          <h2 className="text-xl font-bold text-white mb-2">Maestría Internacional</h2>
-          <div className="flex items-center gap-2 mb-4 text-white/80 font-medium text-sm">
-            <Globe2 size={18} className="text-[#F0223A]" />
-            <span>EE.UU. y España</span>
-          </div>
-
-          <div className="bg-black/30 text-white/90 text-xs px-3 py-2 rounded-lg mb-4 border border-white/5">
-            Reconocible en Sunedu.
-          </div>
-
-          <div className="flex flex-wrap gap-2 mb-6">
-            <span className="bg-white/10 px-3 py-1 rounded-full text-[10px] uppercase tracking-wider text-white font-medium">A Distancia</span>
-          </div>
-
-          <p className="text-white/60 text-xs mt-auto leading-relaxed">
-            Especialízate y expande tus horizontes profesionales con nuestra red de universidades aliadas en Estados Unidos y España.
-          </p>
-        </div>
-
       </div>
 
-      <GlassButton variant="primary" showChevron className="!px-8 !py-3 text-sm mb-8 md:mb-0" onClick={() => setVideoUrl('https://youtu.be/O6dp2FGI-aY')}>
-        Ver Explicación
+      <GlassButton variant="primary" showChevron className="!px-8 !py-3 text-sm mb-8 md:mb-0" onClick={() => setVideoUrl('https://www.youtube.com/watch?v=f_TunHaKeUY')}>
+        Ver testimonio EC
       </GlassButton>
 
       <VideoModal isOpen={!!videoUrl} onClose={() => setVideoUrl(null)} url={videoUrl || ''} />
